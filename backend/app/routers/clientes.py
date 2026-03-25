@@ -16,7 +16,7 @@ ImageField = Literal[
     'imagen4', 'imagen5', 'imagen6', 'imagen7', 'imagen8', 'imagen9'
 ]
 
-@router.post("/", response_model=schemas.Cliente)
+@router.post("/", response_model=schemas.ClienteCreateResponse)
 async def create_cliente(cliente: schemas.ClienteCreate, db: AsyncSession = Depends(get_db)):
     # Verificar si el email o slug ya existen
     db_cliente = await crud.get_cliente_by_email_or_slug(db, email=cliente.email, slug=cliente.slug)

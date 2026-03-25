@@ -100,7 +100,12 @@ async def create_cliente(db: AsyncSession, cliente: schemas.ClienteCreate):
     db.add(db_cliente)
     await db.commit()
     await db.refresh(db_cliente)
-    return db_cliente
+    
+    query = select(models.Cliente).where(models.Cliente.id == db_cliente.id).options(
+        selectinload(models.Cliente.template)
+    )
+    result = await db.execute(query)
+    return result.scalars().one()
 
 async def update_cliente(db: AsyncSession, cliente_id: int, cliente_update: schemas.ClienteUpdate):
     db_cliente = await get_cliente(db=db, cliente_id=cliente_id)

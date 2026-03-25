@@ -95,6 +95,12 @@ class ClienteCreate(ClienteBase):
 class ClienteUpdate(ClienteBase):
     template_id: Optional[int] = None
 
+class ClienteCreateResponse(ClienteBase):
+    id: int
+    template_id: Optional[int] = None
+    token_acceso: Optional[str] = None
+    class Config: from_attributes = True
+
 class Cliente(ClienteBase):
     id: int
     template_id: Optional[int] = None
