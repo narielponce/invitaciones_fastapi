@@ -35,6 +35,8 @@
         </div>
       </a>
     </div>
+
+    <p class="construction-text">Web en construcción...</p>
   </main>
 </template>
 
@@ -115,5 +117,12 @@
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: bold;
+}
+
+.construction-text {
+  margin-top: 3rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  font-style: italic;
 }
 </style>
