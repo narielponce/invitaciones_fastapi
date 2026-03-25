@@ -1,21 +1,14 @@
-# Etapa 1: Entorno de desarrollo
-FROM node:20-alpine
-
-# Establecer el directorio de trabajo en el contenedor
+# Production build
+FROM node:20-alpine AS builder
 WORKDIR /app
-
-# Copiar package.json y package-lock.json
 COPY package*.json ./
-
-# Instalar las dependencias del proyecto
 RUN npm install
-
-# Copiar el resto de los archivos de la aplicación
 COPY . .
+RUN npm run build
 
-# Exponer el puerto que Vite usa por defecto
-EXPOSE 5173
-
-# Comando para iniciar el servidor de desarrollo de Vite
-# El host 0.0.0.0 es necesario para que sea accesible desde fuera del contenedor
-CMD ["npm", "run", "dev"]
+# Production server
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
