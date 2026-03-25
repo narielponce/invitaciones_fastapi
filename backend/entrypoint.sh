@@ -1,9 +1,12 @@
-#!/bin/bash
-set -e
+#!/bin/sh
+
+# Si el comando es alembic, ejecutarlo directamente
+if [ "$1" = "alembic" ]; then
+  exec "$@"
+fi
 
 echo "⏳ Waiting for database..."
-
-until nc -z db 3306; do
+while ! nc -z db 3306; do
   sleep 1
 done
 
