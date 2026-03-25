@@ -15,8 +15,7 @@ os.makedirs(UPLOADS_DIR, exist_ok=True)
 app = FastAPI(
     title="API de Invitaciones Digitales",
     description="Backend para gestionar eventos y confirmaciones.",
-    version="0.1.0",
-    redirect_slashes=False,
+    version="0.1.0"
 )
 
 # Configuración de CORS
