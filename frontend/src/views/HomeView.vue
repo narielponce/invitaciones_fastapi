@@ -7,7 +7,7 @@
     <p class="landing-subtitle">Selecciona una invitación para ver la demostración</p>
     
     <div class="cards-container">
-      <a href="http://localhost:8081/boda/demo-boda" class="card-link">
+      <a href="/boda/demo-boda" class="card-link">
         <div class="card">
           <img 
             src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=300&fit=crop" 
@@ -21,7 +21,7 @@
         </div>
       </a>
 
-      <a href="http://localhost:8081/15/15-feli" class="card-link">
+      <a href="/15/15-feli" class="card-link">
         <div class="card">
           <img 
             src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&h=300&fit=crop" 

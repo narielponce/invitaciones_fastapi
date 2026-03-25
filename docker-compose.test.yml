@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  db:
+    image: mariadb:10.6
+    container_name: tufiesta-db-test
+    environment:
+      MARIADB_ROOT_PASSWORD: root_password
+      MARIADB_DATABASE: invitaciones_db
+      MARIADB_USER: user
+      MARIADB_PASSWORD: password
+    ports:
+      - "3307:3306"
+
+  backend:
+    image: tufiesta-backend
+    container_name: tufiesta-backend-test
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: mysql+asyncmy://user:password@db:3306/invitaciones_db
+    ports:
+      - "8001:8000"

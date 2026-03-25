@@ -33,7 +33,7 @@ const props = defineProps({
   }
 });
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = '/api';
 
 const heroStyle = computed(() => {
   if (props.cliente && props.cliente.imagen_fondo) {

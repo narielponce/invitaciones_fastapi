@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = '/api';
 
 export async function getInvitationByEventTypeAndSlug(eventType, slug) {
   const response = await fetch(`${API_BASE_URL}/${eventType}/${slug}`);

@@ -64,7 +64,7 @@ const props = defineProps({
   cliente: { type: Object, required: true }
 });
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = '/api';
 
 const cbuCopied = ref(false);
 const aliasCopied = ref(false);

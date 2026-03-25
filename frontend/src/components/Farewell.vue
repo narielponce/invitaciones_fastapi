@@ -25,7 +25,7 @@ const props = defineProps({
   cliente: { type: Object, required: true }
 });
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = '/api';
 
 const backgroundStyle = computed(() => {
   if (props.cliente && props.cliente.imagen_fondo) {
