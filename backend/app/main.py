@@ -1,29 +1,22 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-import os
 from fastapi.staticfiles import StaticFiles
+import os
 from .database import engine, Base
 from . import models
 from .routers import templates, clientes, invitaciones
 
-# --- Absolute Path Configuration for Static Files ---
-# Directory containing this main.py file
 APP_DIR = os.path.dirname(os.path.abspath(__file__))
-# Path to the 'backend' directory (one level up from 'app')
 BACKEND_DIR = os.path.dirname(APP_DIR)
-# Absolute path to the 'uploads' directory
 UPLOADS_DIR = os.path.join(BACKEND_DIR, "uploads")
 
-# Ensure the uploads directory exists
 os.makedirs(UPLOADS_DIR, exist_ok=True)
-# --- End of Configuration ---
 
 app = FastAPI(
     title="API de Invitaciones Digitales",
     description="Backend para gestionar eventos y confirmaciones.",
-    version="0.1.0"
+    version="0.1.0",
+    redirect_slashes=False,
 )
 
 # Configuración de CORS
