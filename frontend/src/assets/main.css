@@ -1,0 +1,5 @@
+/* Importar Font Awesome desde el CDN */
+/* @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'); */
+
+/* Importa los estilos base pero elimina los de layout que centran el contenido */
+@import './base.css';

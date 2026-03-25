@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+/*
+ * THEME DEFINITIONS
+ * This file contains the color palettes and typographic styles for different invitation themes.
+ * To use a theme, add the corresponding class (e.g., .theme-boda-romantica) to a top-level element.
+ */
+
+/* 
+ * ====================================================================
+ * Default Theme (Dark/Modern - as previously implemented)
+ * ====================================================================
+ * This is the fallback theme and the style applied by default.
+ */
+:root {
+  /* Colors */
+  --theme-primary-color: #3498db;
+  --theme-background-primary: #2c3e50;
+  --theme-background-secondary: #34495e;
+  --theme-text-primary: #ecf0f1;
+  --theme-text-secondary: #bdc3c7;
+  --theme-text-muted: #95a5a6;
+  --theme-input-background: rgba(0, 0, 0, 0.2);
+  --theme-input-border: #566573;
+  --theme-card-background: rgba(0, 0, 0, 0.15);
+  --theme-overlay-background: rgba(0, 0, 0, 0.65);
+
+  /* Typography */
+  --theme-font-main: 'system-ui', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --theme-font-headings: 'system-ui', sans-serif; /* This will be overridden by the client's specific font */
+}
+
+
+/* 
+ * ====================================================================
+ * Boda Romántica Theme
+ * ====================================================================
+ * Palette: Rosa empolvado, Nude, Marfil, Dorado suave.
+ * Typography: Serif elegante, Script delicado.
+ * Feel: Elegante, cálida, femenina, clásica.
+ */
+.theme-boda-romantica {
+  /* Colors */
+  --theme-primary-color: #d4af37; /* Dorado Suave */
+  --theme-background-primary: #fbf5ef; /* Marfil/Fondo Principal */
+  --theme-background-secondary: #faede0; /* Nude/Fondo Secundario */
+  --theme-text-primary: #5d534a; /* Marrón oscuro para contraste */
+  --theme-text-secondary: #8a7f76; /* Marrón más suave */
+  --theme-text-muted: #a89f97; /* Marrón grisáceo para placeholders */
+  --theme-input-background: rgba(255, 255, 255, 0.6);
+  --theme-input-border: #d7ccc8;
+  --theme-card-background: rgba(255, 255, 255, 0.4);
+  --theme-overlay-background: rgba(251, 245, 239, 0.6); /* Velo color marfil semi-transparente */
+
+  /* Typography */
+  --theme-font-main: 'Lora', serif;
+  --theme-font-headings: 'Great Vibes', cursive;
+}
+
+/* 
+ * ====================================================================
+ * Boda Moderna Theme
+ * ====================================================================
+ * Palette: Blanco, Gris claro, Terracota suave.
+ * Typography: Sans-serif limpia y elegante.
+ * Feel: Minimalista, aireada, tipo Pinterest.
+ */
+.theme-boda-moderna {
+  /* Colors */
+  --theme-primary-color: #C8A69A; /* Terracota Suave */
+  --theme-background-primary: #FFFFFF; /* Blanco */
+  --theme-background-secondary: #F8F9FA; /* Gris Claro */
+  --theme-text-primary: #212529; /* Casi negro */
+  --theme-text-secondary: #6C757D; /* Gris medio */
+  --theme-text-muted: #ADB5BD; /* Gris para placeholders */
+  --theme-input-background: rgba(0, 0, 0, 0.03);
+  --theme-input-border: #E9ECEF;
+  --theme-card-background: rgba(248, 249, 250, 0.75);
+  --theme-overlay-background: rgba(255, 255, 255, 0.75); /* Velo blanco semi-transparente */
+
+  /* Typography */
+  --theme-font-main: 'Inter', sans-serif;
+  --theme-font-headings: 'Inter', sans-serif;
+}
+
+/* 
+ * ====================================================================
+ * Boda Elegante Nocturna Theme
+ * ====================================================================
+ * Palette: Negro, Gris carbón, Blanco, Dorado.
+ * Typography: Serif moderna, Sans minimal.
+ * Feel: Moderna, sofisticada, urbana.
+ */
+.theme-boda-elegante {
+  /* Colors */
+  --theme-primary-color: #D4AF37; /* Dorado */
+  --theme-background-primary: #181818; /* Casi Negro */
+  --theme-background-secondary: #282828; /* Gris Carbón */
+  --theme-text-primary: #EAEAEA; /* Blanco Roto */
+  --theme-text-secondary: #A0A0A0; /* Gris Claro */
+  --theme-text-muted: #707070; /* Gris Medio */
+  --theme-input-background: rgba(255, 255, 255, 0.05);
+  --theme-input-border: #3D3D3D;
+  --theme-card-background: rgba(40, 40, 40, 0.75);
+  --theme-overlay-background: rgba(0, 0, 0, 0.6); /* Velo negro semi-transparente */
+
+  /* Typography */
+  --theme-font-main: 'Inter', sans-serif;
+  --theme-font-headings: 'Playfair Display', serif;
+}
+
+/* 
+ * ====================================================================
+ * Boda Boho / Rústica Theme
+ * ====================================================================
+ * Palette: Verde salvia, Terracota, Beige, Marrón.
+ * Typography: Serif orgánica, Script natural.
+ * Feel: Campo, aire libre, vintage moderno.
+ */
+.theme-boda-rustica {
+  /* Colors */
+  --theme-primary-color: #B88A7C; /* Terracota */
+  --theme-background-primary: #FBF9F4; /* Beige/Crema */
+  --theme-background-secondary: #E8E5DA; /* Verde Salvia Pálido */
+  --theme-text-primary: #5D4037; /* Marrón Oscuro */
+  --theme-text-secondary: #8D6E63; /* Marrón Medio */
+  --theme-text-muted: #A1887F; /* Marrón Grisáceo */
+  --theme-input-background: rgba(255, 255, 255, 0.6);
+  --theme-input-border: #D7CCC8;
+  --theme-card-background: rgba(232, 229, 218, 0.7);
+  --theme-overlay-background: rgba(251, 249, 244, 0.65); /* Velo color crema */
+
+  /* Typography */
+  --theme-font-main: 'Merriweather', serif;
+  --theme-font-headings: 'Kalam', cursive;
+}

@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+aiomysql
+pydantic-settings
+Pillow
+mysql-connector-python
+email-validator
+python-multipart
+alembic
