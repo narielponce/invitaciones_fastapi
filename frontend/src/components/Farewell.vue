@@ -3,9 +3,7 @@
     ref="farewellSectionRef"
     class="section farewell-section animate-on-scroll"
     :class="{ 'animate-in': isIntersecting }"
-    :style="backgroundStyle"
   >
-    <div class="farewell-overlay"></div>
     <div class="container has-text-centered">
       <div class="farewell-content">
         <p class="farewell-message">¡Te esperamos para celebrar!</p>
@@ -18,25 +16,11 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 import { useIntersectionObserver } from '../composables/useIntersectionObserver';
 
 const props = defineProps({
   cliente: { type: Object, required: true }
-});
-
-const API_BASE_URL = '/api';
-
-const backgroundStyle = computed(() => {
-  if (props.cliente && props.cliente.imagen_fondo) {
-    const imageUrl = `${API_BASE_URL}/uploads/${props.cliente.imagen_fondo}`;
-    return {
-      backgroundImage: `url('${imageUrl}')`
-    };
-  }
-  return {
-    backgroundColor: 'var(--theme-background-primary)' // Fallback color from theme
-  };
 });
 
 const farewellSectionRef = ref(null);
@@ -47,17 +31,8 @@ const { isIntersecting } = useIntersectionObserver(farewellSectionRef, { thresho
 .farewell-section {
   position: relative;
   padding: clamp(6rem, 15vw, 12rem) 1.5rem;
-  background-size: cover;
-  background-position: center;
+  background-color: var(--theme-background-secondary);
   color: var(--theme-text-primary);
-}
-
-.farewell-overlay {
-  position: absolute;
-  inset: 0;
-  /* A semi-transparent overlay. For 'boda-romantica' this is a light color, for 'moderna' a dark one. */
-  background-color: var(--theme-overlay-background, rgba(0, 0, 0, 0.65));
-  z-index: 1;
 }
 
 .container {
@@ -78,7 +53,7 @@ const { isIntersecting } = useIntersectionObserver(farewellSectionRef, { thresho
   font-size: clamp(3.5rem, 8vw, 7rem);
   line-height: 1.1;
   color: var(--theme-text-primary);
-  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra muy sutil para color sólido */
 }
 
 /* Animation */
