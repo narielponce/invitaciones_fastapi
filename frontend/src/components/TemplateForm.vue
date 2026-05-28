@@ -8,8 +8,14 @@
           <input id="nombre" v-model="form.nombre" type="text" required />
         </div>
         <div class="form-group">
-          <label for="slug">Slug</label>
-          <input id="slug" v-model="form.slug" type="text" required />
+          <label for="slug">Tema Visual (Slug)</label>
+          <select id="slug" v-model="form.slug" required>
+            <option value="" disabled>Selecciona un tema...</option>
+            <option value="boda-romantica">Boda Romántica</option>
+            <option value="boda-moderna">Boda Moderna</option>
+            <option value="boda-elegante">Boda Elegante</option>
+            <option value="boda-rustica">Boda Rústica / Boho</option>
+          </select>
         </div>
         <div class="form-group">
           <label for="tipo_evento">Tipo de Evento</label>
