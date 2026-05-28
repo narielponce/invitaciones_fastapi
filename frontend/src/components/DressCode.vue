@@ -39,27 +39,27 @@ const props = defineProps({
 const dressCodeDetails = {
   'Formal': {
     icon: 'styler',
-    description: 'Hombres: Traje formal oscuro y corbata. Mujeres: Vestido de noche largo.'
+    description: 'Te sugerimos un look clásico y formal para acompañarnos en esta gran noche.'
   },
   'Elegante': {
     icon: 'styler',
-    description: 'Hombres: Traje formal, corbata opcional. Mujeres: Vestido de noche o de cóctel sofisticado.'
+    description: 'Una excelente oportunidad para lucir tus mejores prendas con un toque de sofisticación.'
   },
   'Elegante Sport': {
     icon: 'checkroom',
-    description: 'Hombres: Camisa y pantalón de vestir, con o sin saco. Mujeres: Vestido de cóctel o un conjunto chic.'
+    description: 'Un estilo cómodo pero cuidado, ideal para disfrutar y moverte con soltura.'
   },
   'Cóctel': {
     icon: 'nightlife',
-    description: 'Hombres: Traje sin corbata o pantalón de vestir y un buen saco. Mujeres: Vestido corto o midi.'
+    description: 'Te invitamos a elegir un atuendo de media etiqueta, perfecto para una velada especial.'
   },
   'Casual': {
     icon: 'accessibility_new',
-    description: 'Un look relajado pero arreglado. ¡Lo más importante es que te sientas a gusto!'
+    description: 'Un look relajado y con tu toque personal. ¡Lo más importante es que te sientas a gusto!'
   },
    'Default': {
     icon: 'checkroom',
-    description: 'Vení con tu mejor atuendo para celebrar.'
+    description: 'Vení con el atuendo que te haga sentir increíble para celebrar con nosotros.'
   }
 };
 
