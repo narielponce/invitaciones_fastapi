@@ -75,8 +75,8 @@ const { isIntersecting } = useIntersectionObserver(eventInfoSectionRef, { thresh
 <style scoped>
 .event-info-section {
   padding: clamp(3rem, 8vw, 6rem) 1.5rem;
-  background-color: #2c3e50;
-  color: #ecf0f1;
+  background-color: var(--theme-background-primary, #2c3e50);
+  color: var(--theme-text-primary, #ecf0f1);
 }
 
 .section-header {
@@ -86,13 +86,13 @@ const { isIntersecting } = useIntersectionObserver(eventInfoSectionRef, { thresh
 .section-title {
   font-size: clamp(2.5rem, 6vw, 4rem);
   line-height: 1.2;
-  color: #ffffff;
+  color: var(--theme-text-primary, #ffffff);
   margin-bottom: 1rem;
 }
 
 .section-subtitle {
   font-size: clamp(1rem, 2.5vw, 1.25rem);
-  color: #bdc3c7;
+  color: var(--theme-text-secondary, #bdc3c7);
   max-width: 600px;
   margin: 0 auto;
 }
@@ -128,20 +128,20 @@ const { isIntersecting } = useIntersectionObserver(eventInfoSectionRef, { thresh
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: #bdc3c7;
+  color: var(--theme-text-secondary, #bdc3c7);
   margin-bottom: 0.5rem;
 }
 
 .detail-text {
   font-size: clamp(1rem, 2.5vw, 1.1rem);
-  color: #ffffff;
+  color: var(--theme-text-primary, #ffffff);
   font-weight: 500;
   line-height: 1.5;
 }
 
 .detail-text-address {
   font-size: 0.9rem;
-  color: #bdc3c7;
+  color: var(--theme-text-secondary, #bdc3c7);
   margin-top: 0.25rem;
 }
 

@@ -77,8 +77,8 @@ const { isIntersecting } = useIntersectionObserver(dressCodeSectionRef, { thresh
 <style scoped>
 .dress-code-section {
   padding: clamp(3rem, 8vw, 6rem) 1.5rem;
-  background-color: #2c3e50;
-  color: #ecf0f1;
+  background-color: var(--theme-background-primary, #2c3e50);
+  color: var(--theme-text-primary, #ecf0f1);
 }
 
 .section-header {
@@ -88,13 +88,13 @@ const { isIntersecting } = useIntersectionObserver(dressCodeSectionRef, { thresh
 .section-title {
   font-size: clamp(2.5rem, 6vw, 4rem);
   line-height: 1.2;
-  color: #ffffff;
+  color: var(--theme-text-primary, #ffffff);
   margin-bottom: 1rem;
 }
 
 .section-subtitle {
   font-size: clamp(1rem, 2.5vw, 1.25rem);
-  color: #bdc3c7;
+  color: var(--theme-text-secondary, #bdc3c7);
   max-width: 600px;
   margin: 0 auto;
 }
@@ -126,13 +126,13 @@ const { isIntersecting } = useIntersectionObserver(dressCodeSectionRef, { thresh
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #ffffff;
+  color: var(--theme-text-primary, #ffffff);
   margin-bottom: 0.75rem;
 }
 
 .dress-code-description {
   font-size: 1.1rem;
-  color: #bdc3c7;
+  color: var(--theme-text-secondary, #bdc3c7);
   line-height: 1.6;
 }
 
@@ -145,7 +145,7 @@ const { isIntersecting } = useIntersectionObserver(dressCodeSectionRef, { thresh
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #bdc3c7;
+  color: var(--theme-text-secondary, #bdc3c7);
   margin-bottom: 1.5rem;
 }
 

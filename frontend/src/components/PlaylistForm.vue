@@ -91,8 +91,8 @@ const { isIntersecting } = useIntersectionObserver(playlistSectionRef, { thresho
 <style scoped>
 .playlist-section {
   padding: clamp(3rem, 8vw, 6rem) 1.5rem;
-  background-color: #34495e; /* Mismo color que RSVP para consistencia */
-  color: #ecf0f1;
+  background-color: var(--theme-background-secondary, #34495e); /* Mismo color que RSVP para consistencia */
+  color: var(--theme-text-primary, #ecf0f1);
 }
 
 .section-header {
@@ -102,13 +102,13 @@ const { isIntersecting } = useIntersectionObserver(playlistSectionRef, { thresho
 .section-title {
   font-size: clamp(2.5rem, 6vw, 4rem);
   line-height: 1.2;
-  color: #ffffff;
+  color: var(--theme-text-primary, #ffffff);
   margin-bottom: 1rem;
 }
 
 .section-subtitle {
   font-size: clamp(1rem, 2.5vw, 1.25rem);
-  color: #bdc3c7;
+  color: var(--theme-text-secondary, #bdc3c7);
   max-width: 600px;
   margin: 0 auto;
 }
@@ -136,7 +136,7 @@ const { isIntersecting } = useIntersectionObserver(playlistSectionRef, { thresho
 .form-label {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #bdc3c7;
+  color: var(--theme-text-secondary, #bdc3c7);
   margin-bottom: 0.5rem;
   text-align: left;
 }
@@ -146,7 +146,7 @@ const { isIntersecting } = useIntersectionObserver(playlistSectionRef, { thresho
   border: 1px solid #566573;
   border-radius: 8px;
   padding: 0.75rem 1rem;
-  color: #ecf0f1;
+  color: var(--theme-text-primary, #ecf0f1);
   font-size: 1rem;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
