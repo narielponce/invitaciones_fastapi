@@ -50,7 +50,17 @@
         <h4>Personalización</h4>
         <div class="form-grid">
           <div class="form-group"> <label for="mensaje_bienvenida">Mensaje de Bienvenida</label> <textarea id="mensaje_bienvenida" v-model="form.mensaje_bienvenida"></textarea> </div>
-          <div class="form-group"> <label for="codigo_vestimenta">Código de Vestimenta</label> <input id="codigo_vestimenta" v-model="form.codigo_vestimenta" type="text" /> </div>
+          <div class="form-group"> 
+            <label for="codigo_vestimenta">Código de Vestimenta</label> 
+            <select id="codigo_vestimenta" v-model="form.codigo_vestimenta">
+              <option value="">-- Sin definir --</option>
+              <option value="Formal">Formal</option>
+              <option value="Elegante">Elegante</option>
+              <option value="Elegante Sport">Elegante Sport</option>
+              <option value="Cóctel">Cóctel</option>
+              <option value="Casual">Casual</option>
+            </select>
+          </div>
           <div class="form-group"> <label for="fuente_nombre">Fuente del Nombre</label> <select id="fuente_nombre" v-model="form.fuente_nombre"> <option value="Great+Vibes">Great Vibes</option> <option value="Dancing+Script">Dancing Script</option> <option value="Allura">Allura</option> <option value="Sacramento">Sacramento</option> <option value="Parisienne">Parisienne</option> </select> </div>
           <div class="form-group"> <label for="instagram_url">URL de Instagram</label> <input id="instagram_url" v-model="form.instagram_url" type="url" /> </div>
           <div class="form-group"> <label for="alias_regalos">Alias/CBU para Regalos</label> <input id="alias_regalos" v-model="form.alias_regalos" type="text" /> </div>
