@@ -21,6 +21,21 @@
           <div class="form-group"> <label for="email">Email</label> <input id="email" v-model="form.email" type="email" required /> </div>
           <div class="form-group"> <label for="telefono_envio_confirmacion">Teléfono para Confirmación</label> <input id="telefono_envio_confirmacion" v-model="form.telefono_envio_confirmacion" type="text" /> </div>
           <div class="form-group"> <label for="template_id">Template</label> <select id="template_id" v-model="form.template_id"> <option :value="null">-- Ninguno --</option> <option v-for="template in templates" :key="template.id" :value="template.id">{{ template.nombre }}</option> </select> </div>
+          
+          <div class="form-group full-width" v-if="isEditMode && form.token_acceso">
+            <label>Link Público de la Invitación (Para los invitados)</label>
+            <div class="copy-input-group">
+              <input type="text" :value="`${baseUrl}/${form.tipo_evento}/${form.slug}`" readonly class="form-input" style="flex-grow: 1;">
+              <button type="button" @click="copyToClipboard(`${baseUrl}/${form.tipo_evento}/${form.slug}`)" class="button-secondary">Copiar</button>
+            </div>
+          </div>
+          <div class="form-group full-width" v-if="isEditMode && form.token_acceso">
+            <label>Link del Panel Privado (Para el cliente)</label>
+            <div class="copy-input-group">
+              <input type="text" :value="`${baseUrl}/${form.tipo_evento}/${form.slug}/confirmaciones?token=${form.token_acceso}`" readonly class="form-input" style="flex-grow: 1;">
+              <button type="button" @click="copyToClipboard(`${baseUrl}/${form.tipo_evento}/${form.slug}/confirmaciones?token=${form.token_acceso}`)" class="button-secondary">Copiar Link Secreto</button>
+            </div>
+          </div>
         </div>
 
         <h4>Detalles del Evento (Fiesta)</h4>
@@ -129,6 +144,17 @@ const uploadStatus = ref({});
 
 const isEditMode = computed(() => !!props.cliente);
 const formTitle = computed(() => (isEditMode.value ? `Editar Cliente: ${props.cliente.nombre}` : 'Crear Nuevo Cliente'));
+const baseUrl = ref(window.location.origin);
+
+const copyToClipboard = async (text) => {
+  try {
+    await navigator.clipboard.writeText(text);
+    alert('Enlace copiado al portapapeles');
+  } catch (err) {
+    console.error('Failed to copy: ', err);
+    alert('Error al copiar el enlace. Cópialo manualmente.');
+  }
+};
 
 const imageFields = [
   { name: 'imagen_fondo', label: 'Imagen de Fondo' },
@@ -222,4 +248,7 @@ h3, h4 { border-bottom: 2px solid #eee; padding-bottom: 0.5rem; margin-bottom: 1
 
 .form-group-checkbox { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
 .form-group-checkbox input[type="checkbox"] { width: auto; }
+
+.copy-input-group { display: flex; gap: 0.5rem; align-items: center; }
+.copy-input-group input { flex-grow: 1; background-color: #f8f9fa; cursor: default; }
 </style>

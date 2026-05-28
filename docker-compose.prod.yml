@@ -28,20 +28,33 @@ services:
     depends_on:
       - db
     networks:
-      - app-network
+      app-network:
+        aliases:
+          - tufiesta-backend
 
   frontend:
     image: ghcr.io/narielponce/tufiesta-frontend:latest
     container_name: vue_frontend
     restart: unless-stopped
-    ports:
-      - "8081:80"
+    # Ya no exponemos el puerto directo porque Traefik se encarga del enrutamiento
+    # ports:
+    #   - "8081:80"
     networks:
       - app-network
+      - traefik-network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik-network"
+      - "traefik.http.routers.tufiesta.rule=Host(`tufiestaonline.com.ar`) || Host(`www.tufiestaonline.com.ar`)"
+      - "traefik.http.routers.tufiesta.entrypoints=web,websecure"
+      - "traefik.http.routers.tufiesta.tls.certresolver=letsencrypt" # Revisa este nombre en tu servidor Traefik
+      - "traefik.http.services.tufiesta.loadbalancer.server.port=80"
 
 networks:
   app-network:
     driver: bridge
+  traefik-network:
+    external: true
 
 volumes:
   db_data:

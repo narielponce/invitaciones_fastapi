@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import InvitationView from '../views/InvitationView.vue';
 import HomeView from '../views/HomeView.vue';
 import Login from '../views/Login.vue';
+import ClientDashboard from '../views/ClientDashboard.vue';
 import AdminLayout from '../layouts/AdminLayout.vue';
 import Clientes from '../views/Clientes.vue';
 import Templates from '../views/Templates.vue';
@@ -19,6 +20,11 @@ const router = createRouter({
       path: '/:tipo_evento/:slug',
       name: 'invitation',
       component: InvitationView,
+    },
+    {
+      path: '/:tipo_evento/:slug/confirmaciones',
+      name: 'client-dashboard',
+      component: ClientDashboard,
     },
 
     // --- Rutas de Administración ---

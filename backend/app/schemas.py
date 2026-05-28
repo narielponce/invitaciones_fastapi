@@ -89,6 +89,13 @@ class ClienteBase(BaseModel):
     imagen8: Optional[str] = None
     imagen9: Optional[str] = None
 
+class ClientePublic(ClienteBase):
+    id: int
+    template_id: Optional[int] = None
+    template: Optional[Template] = None
+    class Config: from_attributes = True
+
+
 class ClienteCreate(ClienteBase):
     template_id: Optional[int] = None
 

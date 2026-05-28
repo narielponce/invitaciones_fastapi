@@ -51,6 +51,20 @@ export async function createClienteCancion(clienteId, cancionData) {
   return await response.json();
 }
 
+export async function getClienteDashboard(eventType, slug, token) {
+  const response = await fetch(`${API_BASE_URL}/${eventType}/${slug}/panel?token=${token}`);
+  if (!response.ok) {
+    if (response.status === 404) {
+      throw new Error('Panel no encontrado');
+    }
+    if (response.status === 403) {
+      throw new Error('No tienes acceso a este panel');
+    }
+    throw new Error('Error al obtener los datos del panel');
+  }
+  return await response.json();
+}
+
 // --- Funciones para Clientes (Admin) ---
 
 export async function getClientes() {
