@@ -46,7 +46,7 @@ const dressCodeDetails = {
     description: 'Hombres: Traje formal, corbata opcional. Mujeres: Vestido de noche o de cóctel sofisticado.'
   },
   'Elegante Sport': {
-    icon: 'tie',
+    icon: 'checkroom',
     description: 'Hombres: Camisa y pantalón de vestir, con o sin saco. Mujeres: Vestido de cóctel o un conjunto chic.'
   },
   'Cóctel': {
