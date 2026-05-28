@@ -171,6 +171,12 @@ const handleImageUpload = async (event, fieldName) => {
   const file = event.target.files[0];
   if (!file) return;
 
+  const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
+  if (file.size > MAX_FILE_SIZE) {
+    uploadStatus.value[fieldName] = 'Error: La imagen supera el tamaño máximo permitido de 5MB.';
+    return;
+  }
+
   uploadStatus.value[fieldName] = 'loading';
 
   try {

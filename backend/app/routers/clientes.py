@@ -35,6 +35,10 @@ async def upload_cliente_image(
     if not db_cliente:
         raise HTTPException(status_code=404, detail="Cliente not found")
 
+    MAX_FILE_SIZE = 5 * 1024 * 1024  # 5 MB
+    if file.size is not None and file.size > MAX_FILE_SIZE:
+        raise HTTPException(status_code=400, detail="La imagen supera el tamaño máximo permitido de 5MB.")
+
     try:
         image_path = image_utils.process_and_save_image(upload_file=file)
     except ValueError as e:

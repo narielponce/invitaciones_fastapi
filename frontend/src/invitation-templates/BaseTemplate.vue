@@ -1,5 +1,5 @@
 <template>
-  <div :class="['invitation-wrapper', themeClass]">
+  <div :class="['invitation-wrapper', themeClass]" :style="customStyle">
     <HeroSection :cliente="cliente" />
     <Countdown :cliente="cliente" />
     <EventInfo :cliente="cliente" />
@@ -30,7 +30,7 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed, watchEffect } from 'vue';
 // Importar todos los componentes de sección que componen esta plantilla
 import HeroSection from '../components/HeroSection.vue';
 import Countdown from '../components/Countdown.vue';
@@ -58,6 +58,34 @@ const props = defineProps({
 const themeClass = computed(() => {
   const templateName = props.cliente?.template?.slug;
   return templateName ? `theme-${templateName}` : '';
+});
+
+// NUEVO: Estilo dinámico para sobreescribir la tipografía de los títulos
+const customStyle = computed(() => {
+  if (props.cliente?.fuente_nombre) {
+    // Reemplazar '+' por espacio para el nombre de la fuente en CSS
+    const fontFamily = props.cliente.fuente_nombre.replace(/\+/g, ' ');
+    return {
+      '--theme-font-headings': `"${fontFamily}", cursive, sans-serif`
+    };
+  }
+  return {};
+});
+
+// NUEVO: Cargar la fuente de Google dinámicamente
+watchEffect(() => {
+  if (props.cliente?.fuente_nombre) {
+    const fontName = props.cliente.fuente_nombre; // ej. "Great+Vibes"
+    const linkId = `dynamic-font-${fontName}`;
+    
+    if (!document.getElementById(linkId)) {
+      const link = document.createElement('link');
+      link.id = linkId;
+      link.rel = 'stylesheet';
+      link.href = `https://fonts.googleapis.com/css2?family=${fontName}&display=swap`;
+      document.head.appendChild(link);
+    }
+  }
 });
 </script>
 
