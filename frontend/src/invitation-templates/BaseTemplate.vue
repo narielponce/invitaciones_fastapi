@@ -2,11 +2,10 @@
   <div :class="['invitation-wrapper', themeClass]" :style="customStyle">
     <HeroSection :cliente="cliente" />
     <Countdown :cliente="cliente" />
-    <EventInfo :cliente="cliente" />
-
     <!-- NUEVO: Mostrar Ceremonia si está activado -->
     <CeremonyInfo v-if="cliente.mostrar_ceremonia && cliente.fecha_ceremonia" :cliente="cliente" />
     
+    <EventInfo :cliente="cliente" />
     <!-- Mostrar Galería si está activado -->
     <PhotoGallery v-if="cliente.mostrar_galeria" :cliente="cliente" />
     
