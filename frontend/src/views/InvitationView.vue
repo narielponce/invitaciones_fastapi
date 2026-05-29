@@ -52,7 +52,7 @@ onMounted(async () => {
   try {
     cliente.value = await getInvitationByEventTypeAndSlug(tipo_evento, slug);
     // Actualizar el título de la pestaña del navegador
-    document.title = `Invitación de ${cliente.value.nombre} - Tu Fiesta Online`;
+    document.title = `${cliente.value.nombre} - Tu Fiesta Online`;
   } catch (e) {
     error.value = e.message;
   } finally {
