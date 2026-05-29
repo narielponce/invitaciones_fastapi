@@ -4,7 +4,7 @@
     <div class="container has-text-centered">
 
       <div class="section-header">
-        <h2 class="section-title" :style="{ fontFamily: `'${cliente.fuente_nombre}', cursive` }">La Ceremonia</h2>
+        <h2 class="section-title" :style="{ fontFamily: `'${cliente.fuente_nombre}', cursive` }">La Ceremonia Religiosa</h2>
         <p class="section-subtitle">
           Nos daremos el "sí, quiero" en:
         </p>

@@ -4,9 +4,9 @@
     <div class="container has-text-centered">
 
       <div class="section-header">
-        <h2 class="section-title" :style="{ fontFamily: `'${cliente.fuente_nombre}', cursive` }">Ceremonia y Festejo</h2>
+        <h2 class="section-title" :style="{ fontFamily: `'${cliente.fuente_nombre}', cursive` }">El Festejo</h2>
         <p class="section-subtitle">
-          Te esperamos para celebrar nuestro gran día en:
+          ¡Te esperamos para festejar juntos nuestro gran día!
         </p>
       </div>
 
